@@ -1,0 +1,37 @@
+﻿@model FryGuillermo_UI2.ViewModels.VmListadoPlantas
+@using FryGuillermo2_Entities
+@using FryGuillermo_UI2.Models
+@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+</head>
+<body>
+    <form method="post">
+        <select name="selectCategorias">
+            @foreach (clsCategoria categoria in Model.ListadoCategorias())
+            {
+                <option value="@categoria.IdCategoria">@categoria.nombreCategoria</option>
+            }
+        </select>
+        <input type="submit" value="show plants">
+    </form>
+    <div>
+        <label>@Html.ViewData["resultado"]</label>
+    </div>
+    <div style="margin-top:20px">
+        @foreach (PlantaSoloNombreId planta in Model.ListadoPlantas())
+        {
+            <label value="@planta.IdPlanta">@planta.nombrePlanta</label>
+            @Html.ActionLink("Editar Planta", "EditarPlanta", new { idPlanta = planta.IdPlanta })
+
+        }
+    </div>
+</body>
+</html>
+

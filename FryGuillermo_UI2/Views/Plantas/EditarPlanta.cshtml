@@ -1,0 +1,44 @@
+﻿@model FryGuillermo2_Entities.clsPlanta
+@{
+    ViewData["Title"] = "EditarPlanta";
+}
+
+<h1>EditarPlanta</h1>
+
+<h4>clsPlanta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditarPlanta">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="IdPlanta" class="form-control" type="hidden"/>
+                <span asp-validation-for="IdPlanta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombrePlanta" class="control-label"></label>
+                <input asp-for="NombrePlanta" class="form-control" readonly />
+                <span asp-validation-for="NombrePlanta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescripcionPlanta" class="control-label"></label>
+                <input asp-for="DescripcionPlanta" class="form-control"readonly />
+                <span asp-validation-for="DescripcionPlanta" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Precio" class="control-label"></label>
+                <input asp-for="Precio" class="form-control" required />
+                <span asp-validation-for="Precio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
