@@ -15,15 +15,13 @@
                 <input asp-for="IdPlanta" class="form-control" type="hidden"/>
                 <span asp-validation-for="IdPlanta" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="NombrePlanta" class="control-label"></label>
-                <input asp-for="NombrePlanta" class="form-control" readonly />
-                <span asp-validation-for="NombrePlanta" class="text-danger"></span>
+            <div>
+                <label>Nombre Planta<br>
+                @Model.NombrePlanta</label>
             </div>
-            <div class="form-group">
-                <label asp-for="DescripcionPlanta" class="control-label"></label>
-                <input asp-for="DescripcionPlanta" class="form-control"readonly />
-                <span asp-validation-for="DescripcionPlanta" class="text-danger"></span>
+            <div>
+                <label>Descripción Planta<br>
+                @Model.DescripcionPlanta</label>
             </div>
 
             <div class="form-group">

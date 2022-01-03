@@ -25,12 +25,18 @@
         <label>@Html.ViewData["resultado"]</label>
     </div>
     <div style="margin-top:20px">
-        @foreach (PlantaSoloNombreId planta in Model.ListadoPlantas())
-        {
-            <label value="@planta.IdPlanta">@planta.nombrePlanta</label>
-            @Html.ActionLink("Editar Planta", "EditarPlanta", new { idPlanta = planta.IdPlanta })
-
-        }
+        <table class="default" style="border:1px solid black;">
+            @foreach (PlantaSoloNombreId planta in Model.ListadoPlantas())
+            {
+                <tr style="border: 1px solid black;">
+                    <td style="border: 1px solid black;">
+                        <label style="margin-top:10px; margin-right:10px;" value="@planta.IdPlanta">@planta.nombrePlanta</label>
+                    </td>
+                    <td style="border: 1px solid black;">
+                        @Html.ActionLink("Editar Planta", "EditarPlanta", new { idPlanta = planta.IdPlanta })
+                    </td>
+                </tr>
+            }
     </div>
 </body>
 </html>
