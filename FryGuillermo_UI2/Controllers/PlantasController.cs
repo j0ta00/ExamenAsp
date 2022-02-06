@@ -35,7 +35,7 @@ namespace FryGuillermo_UI2.Controllers
             IActionResult view = null;
             if (ModelState.IsValid)
             {
-                clsManagerPlanta.editarPlanta(IdPlanta, Precio);
+                clsGestoraPlanta.editarPrecioPlanta(IdPlanta, Precio);
                 view = RedirectToAction("Index", new { resultado = "precio cambiado con éxito"});
             }
             else {

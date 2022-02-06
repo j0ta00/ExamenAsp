@@ -1,10 +1,11 @@
-﻿using CRUD_Personas_BL;
+﻿
 using FryGuillermo2_Entities;
 using FryGuillermo_UI2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FryGuillermo_BL;
 
 namespace FryGuillermo_UI2.ViewModels
 {

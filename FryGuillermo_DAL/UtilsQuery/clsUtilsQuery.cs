@@ -100,12 +100,12 @@ namespace CRUD_Personas_DAL
             myConnection.Close();
         }
 
-        public void editarPlanta(int id,double precio){
+        public int editarPlanta(int id,double precio){
             myCommand.Parameters.Add("@idPlanta",System.Data.SqlDbType.Int).Value=id;
             myCommand.Parameters.Add("@precio",System.Data.SqlDbType.Float).Value=(float)precio;
             myCommand.CommandText = "Update Plantas Set precio=@precio  Where idPlanta=@idPlanta";
             myCommand.Connection = myConnection;
-            myCommand.ExecuteNonQuery();
+            return myCommand.ExecuteNonQuery();
         }
 
     }
